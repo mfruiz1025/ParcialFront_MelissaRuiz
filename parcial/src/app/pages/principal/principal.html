@@ -1,0 +1,46 @@
+<h2>Listado de Clínicas</h2>
+
+<div *ngFor="let c of clinicas">
+
+  <b>{{ c.name }}</b><br>
+  Dirección: {{ c.direccion }}<br>
+  Ciudad: {{ c.ciudad }}<br>
+  Teléfono: {{ c.telefono }}<br>
+  Cámaras: {{ c.cantidad_camaras }}<br>
+  Estado: {{ c.status }}<br><br>
+
+</div>
+
+<hr>
+
+<h2>Crear Nueva Clínica</h2>
+
+<form (ngSubmit)="crearClinica()">
+
+  <label>Nombre:</label><br>
+  <input [(ngModel)]="nuevaClinica.name" name="name"><br><br>
+
+  <label>Dirección:</label><br>
+  <input [(ngModel)]="nuevaClinica.direccion" name="direccion"><br><br>
+
+  <label>Cantidad de cámaras:</label><br>
+  <input type="number" [(ngModel)]="nuevaClinica.cantidad_camaras" name="cantidad_camaras"><br><br>
+
+  <label>Teléfono:</label><br>
+  <input type="number" [(ngModel)]="nuevaClinica.telefono" name="telefono"><br><br>
+
+  <label>Ciudad:</label><br>
+  <input [(ngModel)]="nuevaClinica.ciudad" name="ciudad"><br><br>
+
+  <label>Fecha de creación:</label><br>
+  <input type="date" [(ngModel)]="nuevaClinica.fecha_creacion" name="fecha_creacion"><br><br>
+
+  <label>Estado:</label><br>
+  <select [(ngModel)]="nuevaClinica.status" name="status">
+    <option value="active">Activo</option>
+    <option value="inactive">Inactivo</option>
+  </select><br><br>
+
+  <button type="submit">Crear Clínica</button>
+
+</form>
